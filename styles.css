@@ -508,6 +508,13 @@ h3 {
   font-size: 1.04rem;
 }
 
+.snapshot-intro {
+  max-width: 390px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.02rem;
+}
+
 .split-heading {
   display: flex;
   align-items: end;
@@ -517,11 +524,38 @@ h3 {
 
 .impact-grid,
 .fit-grid,
+.snapshot-grid,
+.case-grid,
 .project-grid,
 .skills-grid,
 .credentials {
   display: grid;
   gap: 18px;
+}
+
+.snapshot-section {
+  padding-bottom: 74px;
+}
+
+.snapshot-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.snapshot-card,
+.case-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.snapshot-card {
+  min-height: 250px;
+  padding: 28px;
+}
+
+.snapshot-card p,
+.case-card p {
+  color: var(--muted);
 }
 
 .fit-section {
@@ -560,6 +594,8 @@ h3 {
 }
 
 .fit-card,
+.snapshot-card,
+.case-card,
 .impact-card,
 .project-card,
 .skill-group,
@@ -590,6 +626,45 @@ h3 {
   font-weight: 900;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+.case-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.case-card {
+  min-height: 390px;
+  display: flex;
+  flex-direction: column;
+  padding: 28px;
+}
+
+.case-meta {
+  display: grid;
+  gap: 10px;
+  margin: auto 0 0;
+}
+
+.case-meta div {
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
+
+.case-meta dt {
+  margin-bottom: 4px;
+  color: var(--coral);
+  font-size: 0.72rem;
+  font-weight: 950;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.case-meta dd {
+  margin: 0;
+  color: #304047;
+  font-size: 0.92rem;
+  font-weight: 800;
+  line-height: 1.35;
 }
 
 .experience-layout {
@@ -879,6 +954,41 @@ h3 {
   padding: 26px;
 }
 
+.contact-section {
+  padding: 86px 0;
+}
+
+.contact-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 28px;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 34px;
+  background:
+    linear-gradient(135deg, rgba(0, 108, 103, 0.07), rgba(184, 137, 33, 0.08)),
+    var(--surface);
+}
+
+.contact-panel h2 {
+  max-width: 680px;
+}
+
+.contact-panel p:not(.eyebrow) {
+  max-width: 620px;
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 1.04rem;
+}
+
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
+  gap: 10px;
+}
+
 .site-footer {
   border-top: 1px solid var(--line);
   padding: 30px 0;
@@ -925,6 +1035,8 @@ h3 {
   .hero-grid,
   .experience-layout,
   .fit-grid,
+  .snapshot-grid,
+  .case-grid,
   .impact-grid,
   .skills-grid,
   .credentials {
@@ -959,6 +1071,14 @@ h3 {
 
   .usage-stats {
     grid-template-columns: 1fr;
+  }
+
+  .contact-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-actions {
+    justify-content: start;
   }
 }
 
@@ -1072,6 +1192,7 @@ h3 {
   }
 
   .hero-actions,
+  .contact-actions,
   .project-links,
   .footer-links {
     flex-direction: column;
@@ -1079,6 +1200,7 @@ h3 {
   }
 
   .button,
+  .contact-actions a,
   .project-links a {
     width: 100%;
     justify-content: center;
@@ -1089,9 +1211,15 @@ h3 {
   }
 
   .impact-card,
+  .snapshot-card,
+  .case-card,
   .project-card,
   .skill-group,
   .credentials article {
     padding: 22px;
+  }
+
+  .contact-panel {
+    padding: 24px;
   }
 }
