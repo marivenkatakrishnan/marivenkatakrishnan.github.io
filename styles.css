@@ -526,6 +526,7 @@ h3 {
 .fit-grid,
 .snapshot-grid,
 .case-grid,
+.open-source-grid,
 .project-grid,
 .skills-grid,
 .credentials {
@@ -596,6 +597,7 @@ h3 {
 .fit-card,
 .snapshot-card,
 .case-card,
+.open-source-card,
 .impact-card,
 .project-card,
 .skill-group,
@@ -665,6 +667,25 @@ h3 {
   font-size: 0.92rem;
   font-weight: 800;
   line-height: 1.35;
+}
+
+.open-source-grid {
+  grid-template-columns: 1.35fr 1fr 1fr;
+}
+
+.open-source-card {
+  min-height: 300px;
+  padding: 28px;
+}
+
+.featured-open-source {
+  background:
+    linear-gradient(135deg, rgba(0, 108, 103, 0.1), rgba(184, 137, 33, 0.12)),
+    var(--surface);
+}
+
+.open-source-card p {
+  color: var(--muted);
 }
 
 .experience-layout {
@@ -1069,6 +1090,34 @@ h3 {
   outline-offset: 3px;
 }
 
+@media (max-width: 1020px) {
+  .nav-toggle {
+    display: inline-grid;
+    place-items: center;
+  }
+
+  .nav-links {
+    position: fixed;
+    inset: 72px 16px auto 16px;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 12px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+  }
+
+  .nav-open .nav-links {
+    display: flex;
+  }
+
+  .nav-links a {
+    justify-content: center;
+  }
+}
+
 @media (max-width: 940px) {
   :root {
     --container: min(100% - 32px, 760px);
@@ -1079,6 +1128,7 @@ h3 {
   .fit-grid,
   .snapshot-grid,
   .case-grid,
+  .open-source-grid,
   .impact-grid,
   .skills-grid,
   .credentials {
@@ -1259,6 +1309,7 @@ h3 {
   .impact-card,
   .snapshot-card,
   .case-card,
+  .open-source-card,
   .project-card,
   .skill-group,
   .credentials article {
